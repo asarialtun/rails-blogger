@@ -13,5 +13,5 @@ class TagsController < ApplicationController
         flash.notice = "Tag '#{@tag.name}' deleted! "
         redirect_to tags_path
     end
-    
+    before_filter :require_login, only:[:destroy]
 end
